@@ -15,7 +15,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="firstName">First Name*</label>
-          <input
+          <input data-testid='firstName'
             name="firstName"
             placeholder="Edd"
             ref={register({ required: true, maxLength: 3 })}
@@ -51,11 +51,11 @@ const ContactForm = () => {
           <textarea name="message" ref={register({ required: false })} />
         </div>
         {data && (
-          <pre style={{ textAlign: "left", color: "white" }}>
+          <pre data-testid='form-data' style={{ textAlign: "left", color: "white" }}>
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        <input type="submit" />
+        <input data-testid='submit' type="submit" />
       </form>
     </div>
   );
